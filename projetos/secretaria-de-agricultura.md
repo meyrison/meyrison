@@ -2,7 +2,7 @@
 
 **Gestão rural · Windows · Android · Backend**
 
-[← Voltar ao portfólio](../README.md)
+[Voltar ao portfólio](../README.md)
 
 ## O projeto
 
@@ -37,7 +37,7 @@ flowchart LR
 
 As notas publicadas incluem evolução da interface de login no Windows e manutenção do fluxo de atualização no Android.
 
-## Pontos para uma entrevista técnica
+## Aspectos técnicos
 
 - Integração entre aplicações e API.
 - Modelagem de pedidos e transições de status.

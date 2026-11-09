@@ -2,7 +2,7 @@
 
 **Turismo digital · Aplicativo do visitante · Administração · Backend**
 
-[← Voltar ao portfólio](../README.md)
+[Voltar ao portfólio](../README.md)
 
 ## O projeto
 
@@ -30,7 +30,7 @@ O diagrama resume os componentes; os aplicativos utilizam serviços com contrato
 
 **Python, Flet, FastAPI, HTTPX, Pydantic, SQLite, Google Apps Script e integração Android em Kotlin.**
 
-## Pontos para uma entrevista técnica
+## Aspectos técnicos
 
 - Separação entre experiência do visitante, administração e serviços.
 - Persistência de rascunhos e estado por usuário.

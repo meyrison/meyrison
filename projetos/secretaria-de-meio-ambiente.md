@@ -2,7 +2,7 @@
 
 **Gestão de atividades · Cronogramas · Cadastros · Ações formativas**
 
-[← Voltar ao portfólio](../README.md)
+[Voltar ao portfólio](../README.md)
 
 ## O projeto
 
@@ -35,7 +35,7 @@ flowchart LR
 
 O canal público disponibiliza uma versão Windows. O escopo do backend descrito nesta ficha pode evoluir independentemente dessa release.
 
-## Pontos para uma entrevista técnica
+## Aspectos técnicos
 
 - Organização de fluxos semanais e estados de publicação.
 - Relação entre ações formativas e participantes.

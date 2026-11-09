@@ -2,7 +2,7 @@
 
 **Gestão legislativa · Sessões · Votação · Sincronização**
 
-[← Voltar ao portfólio](../README.md)
+[Voltar ao portfólio](../README.md)
 
 ## O projeto
 
@@ -31,7 +31,7 @@ O diagrama apresenta o fluxo funcional, sem reproduzir contratos internos.
 
 **Python, FastAPI, Pydantic, PostgreSQL, psycopg2, JWT e ferramentas para documentos PDF e Office.**
 
-## Pontos para uma entrevista técnica
+## Aspectos técnicos
 
 - Como representar o ciclo de vida de uma votação.
 - Como integrar consultas de dispositivos ao estado persistido.

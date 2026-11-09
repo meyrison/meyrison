@@ -2,7 +2,7 @@
 
 **Gestão de atendimentos · Triagens · Encaminhamentos · Relatórios**
 
-[← Voltar ao portfólio](../README.md)
+[Voltar ao portfólio](../README.md)
 
 ## O projeto
 
@@ -27,7 +27,7 @@ flowchart LR
 
 **Python, FastAPI, Pydantic, PostgreSQL, JWT, ReportLab e bibliotecas para documentos.**
 
-## Pontos para uma entrevista técnica
+## Aspectos técnicos
 
 - Tradução de fluxos de atendimento em modelos e operações de API.
 - Validação de dados e organização do acesso por usuário.
