@@ -1,22 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360" role="img" aria-labelledby="title desc">
-<title id="title">Luan Meyrison — Desenvolvimento de software</title>
-<desc id="desc">Python, aplicações Windows e Android, APIs e dados. Identidade visual em verde escuro e creme.</desc>
-<rect width="1280" height="360" rx="20" fill="#112B26"/>
-<path d="M0 325H1280M0 326H1280" stroke="#315348"/>
-<circle cx="1190" cy="0" r="255" fill="none" stroke="#315348"/>
-<circle cx="1190" cy="0" r="310" fill="none" stroke="#24463B"/>
-<rect x="60" y="55" width="38" height="5" rx="2" fill="#BDE4B0"/>
-<text x="60" y="105" fill="#BDE4B0" font-family="Segoe UI,Arial,sans-serif" font-size="19" letter-spacing="4">DESENVOLVIMENTO DE SOFTWARE</text>
-<text x="56" y="184" fill="#F8F4E8" font-family="Segoe UI,Arial,sans-serif" font-size="67" font-weight="700" letter-spacing="-2">Luan Meyrison</text>
-<text x="60" y="236" fill="#D6E0D4" font-family="Segoe UI,Arial,sans-serif" font-size="27">Interfaces, APIs e dados.</text>
-<text x="60" y="291" fill="#BDE4B0" font-family="Segoe UI,Arial,sans-serif" font-size="20">PYTHON  /  FLET  /  FASTAPI</text>
-<g font-family="Segoe UI,Arial,sans-serif">
-<rect x="880" y="68" width="315" height="66" rx="10" fill="#1D3A31" stroke="#426252"/>
-<text x="905" y="109" fill="#F8F4E8" font-size="23">01  Windows + Android</text>
-<path d="M1036 134v22" stroke="#BDE4B0" stroke-width="2"/>
-<rect x="880" y="156" width="315" height="66" rx="10" fill="#1D3A31" stroke="#426252"/>
-<text x="905" y="197" fill="#F8F4E8" font-size="23">02  APIs e integrações</text>
-<path d="M1036 222v22" stroke="#BDE4B0" stroke-width="2"/>
-<rect x="880" y="244" width="315" height="66" rx="10" fill="#BDE4B0"/>
-<text x="905" y="285" fill="#112B26" font-size="23">03  Dados e processos</text>
-</g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="190" viewBox="0 0 1200 190" role="img" aria-labelledby="title desc">
+<title id="title">Luan Meyrison — Desenvolvimento Python</title>
+<desc id="desc">Python, FastAPI, Flet e PostgreSQL. Destaques: Turismo Agrestinense e votação legislativa.</desc>
+<rect width="1200" height="190" rx="16" fill="#112B26"/>
+<path d="M680 28v134" stroke="#426252"/>
+<rect x="42" y="27" width="28" height="4" rx="2" fill="#BDE4B0"/>
+<text x="84" y="34" fill="#BDE4B0" font-family="Segoe UI,Arial,sans-serif" font-size="16" letter-spacing="2">DESENVOLVIMENTO PYTHON</text>
+<text x="40" y="100" fill="#F8F4E8" font-family="Segoe UI,Arial,sans-serif" font-size="54" font-weight="700" letter-spacing="-1">Luan Meyrison</text>
+<text x="43" y="147" fill="#D6E0D4" font-family="Segoe UI,Arial,sans-serif" font-size="21">FastAPI · Flet · PostgreSQL · Windows e Android</text>
+<rect x="718" y="30" width="440" height="56" rx="8" fill="#1D3A31" stroke="#426252"/>
+<text x="740" y="65" fill="#F8F4E8" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="600">01  Turismo Agrestinense</text>
+<rect x="718" y="103" width="440" height="56" rx="8" fill="#BDE4B0"/>
+<text x="740" y="138" fill="#112B26" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="600">02  Votação legislativa</text>
+</svg>

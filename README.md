@@ -1,46 +1,13 @@
-![Luan Meyrison — Desenvolvimento Python. Interfaces, APIs e dados.](assets/profile-header.svg)
-
-<p align="center">
-<strong>Python · FastAPI · Flet · PostgreSQL</strong><br>
-Turismo, votação legislativa e sistemas para gestão pública.
-</p>
-
-<p align="center">
-<a href="#projetos-em-destaque">Conheça os projetos</a> ·
-<a href="#competências-técnicas">Competências técnicas</a> ·
-<a href="#oportunidades">Oportunidades</a> ·
-<a href="#english">English</a>
-</p>
-
-## Olá, sou o Luan
-
-Desenvolvo aplicações em **Python**, conectando interfaces para **Windows e Android**, APIs e bancos de dados. Meu portfólio vai de um ecossistema de turismo com aplicativo, administração e backend a sistemas de votação legislativa e gestão de secretarias.
-
-Trabalho na conexão entre a experiência de quem usa e as regras do sistema: navegação, autenticação, sincronização, persistência e geração de documentos.
+![Luan Meyrison — Python. Destaques: Turismo Agrestinense e votação legislativa.](assets/profile-header.svg)
 
 ## Projetos em destaque
 
-### 01 · Turismo Agrestinense
+| [01 · Turismo Agrestinense →](projetos/turismo-agrestinense.md) | [02 · Votação da Câmara →](projetos/votacao-legislativa.md) |
+| :--- | :--- |
+| **Aplicativo do visitante + administração + backend.** Mapas, roteiros, guia de áudio e passaporte digital. | **Sessões + votos + sincronização.** Preparação, abertura e encerramento de votações, com consultas para painéis e dispositivos. |
+| Python · Flet · FastAPI · Android/Kotlin | Python · FastAPI · PostgreSQL |
 
-**Aplicativo do visitante + administração + backend**
-
-Ecossistema com módulos de descoberta turística, mapas, roteiros, guia de áudio e passaporte digital. O aplicativo administrativo reúne publicação de notícias, editor, filtros e rascunhos por usuário; o backend possui autenticação e sincronização.
-
-**Em foco:** integração entre componentes, experiência mobile, estado por usuário e comunicação com serviços.
-
-[Explorar o projeto →](projetos/turismo-agrestinense.md)
-
-### 02 · Votação da Câmara dos Vereadores
-
-**Sessões legislativas + votação + sincronização com dispositivos**
-
-Backend com operações para sessões, documentos, abertura e encerramento de votações, registro de votos e consulta de estado para painéis e dispositivos.
-
-**Em foco:** regras de votação, transições de estado, persistência e sincronização.
-
-[Explorar o projeto →](projetos/votacao-legislativa.md)
-
-### 03–05 · Sistemas para secretarias
+### Sistemas para Mulher, Agricultura e Meio Ambiente
 
 Três projetos com fluxos específicos de gestão:
 
@@ -58,6 +25,12 @@ Três projetos com fluxos específicos de gestão:
 - **SaaS de atendimento por WhatsApp:** backend com autenticação, consultas de conversas e operações de atendimento, utilizando FastAPI e SQLAlchemy.
 
 > As fichas acima são públicas e podem ser lidas sem acesso aos repositórios de implementação. Código, credenciais e dados operacionais dos projetos privados permanecem restritos.
+
+## Sobre meu trabalho
+
+Sou **Luan Meyrison**, desenvolvedor Python. Trabalho na conexão entre interfaces para **Windows e Android**, APIs e bancos de dados, com projetos em turismo, gestão legislativa e serviços públicos.
+
+Meu foco está na experiência de quem usa e nas regras que sustentam o sistema: autenticação, fluxos de trabalho, sincronização, persistência e documentos.
 
 ## Competências técnicas
 
