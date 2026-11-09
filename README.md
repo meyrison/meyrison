@@ -1,4 +1,4 @@
-![Luan Meyrison — Python. Destaques: Turismo Agrestinense e votação legislativa.](assets/profile-header.svg)
+![Luan Meyrison — Python. Destaques: Turismo Agrestinense e votação legislativa.](assets/profile-header-compact.svg)
 
 ## Projetos em destaque
 
