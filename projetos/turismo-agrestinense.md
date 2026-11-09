@@ -1,48 +1,117 @@
 # Turismo Agrestinense
 
-**Turismo digital · Aplicativo do visitante · Administração · Backend**
+**Documentação técnica | Aplicativo, administração e backend**
 
-[Voltar ao portfólio](../README.md)
+[Perfil profissional](https://github.com/meyrison) | [Índice da documentação](README.md)
 
-## O projeto
+## Objetivo
 
-Ecossistema de software voltado à descoberta turística de Agrestina. Reúne um aplicativo para o visitante, um aplicativo administrativo e um backend, com responsabilidades próprias.
+Reunir descoberta turística, conteúdo editorial e jornada do visitante em um ecossistema com três componentes: aplicativo do visitante, aplicativo administrativo e backend. O projeto contempla interfaces Python/Flet, recursos Android nativos e serviços de autenticação e sincronização.
 
-## Componentes e funcionalidades
+## Funcionalidades
 
-| Componente | Escopo encontrado no projeto |
+| Componente | Responsabilidades |
 | :--- | :--- |
-| Aplicativo do visitante | Descoberta, mapas, roteiros, guia de áudio, passaporte digital e perfil |
-| Administração | Notícias, busca e filtros, editor, fotos, áudio, prévia de publicação e rascunhos por usuário |
-| Backend e serviços | Autenticação, sessões, sincronização de dados e integração com serviços externos |
-| Integração Android | Ponte nativa para login Google, notificações, navegação e compartilhamento |
+| Visitante | Descoberta de lugares, mapas, roteiros, guia de áudio, passaporte digital, perfil e jornada |
+| Administração | Notícias, busca, filtros, editor, fotos, áudio, prévia de publicação e rascunhos por usuário |
+| Backend | Identidade, sessões, sincronização, serviços de roteiros, feedback e telemetria |
+| Android nativo | Integração com login Google, notificações, navegação e compartilhamento |
+
+## Arquitetura e fluxo de dados
 
 ```mermaid
 flowchart LR
-    V["Aplicativo do visitante"] --> S["APIs e serviços"]
-    A["Aplicativo administrativo"] --> S
-    S --> P["Persistência e sincronização"]
+    V["Aplicativo do visitante"] --> A["APIs e serviços"]
+    E["Aplicativo administrativo"] --> A
+    A --> P["Persistência e sincronização"]
+    V <--> N["Integração Android nativa"]
 ```
 
-O diagrama resume os componentes; os aplicativos utilizam serviços com contratos próprios.
+Os clientes utilizam contratos próprios com o backend e com serviços Google Apps Script. Não se trata de uma única API compartilhada por todas as operações. O estado local e os rascunhos são separados por usuário.
 
-## Tecnologias
+## Tecnologias e organização
 
-**Python, Flet, FastAPI, HTTPX, Pydantic, SQLite, Google Apps Script e integração Android em Kotlin.**
+| Área | Tecnologias e arquivos |
+| :--- | :--- |
+| Interfaces | Python 3.12, Flet 0.86.5, módulos `app_*.py` e `main.py` |
+| Android | Kotlin, ponte JNI e template em `native/flet-template/` |
+| Backend | FastAPI, Pydantic e HTTPX; entrada em `app/main.py` |
+| Persistência | SQLite no backend; armazenamento local nos clientes |
+| Integrações | Login Google, Google Apps Script, mapas e recursos nativos |
+| Contratos e serviços | `app/models.py`, `app/services/`, `app/security/` |
+| Configuração | `pyproject.toml`, `requirements*.txt`, `app/config.py` e `render.yaml` |
 
-## Aspectos técnicos
+## Requisitos e execução
 
-- Separação entre experiência do visitante, administração e serviços.
-- Persistência de rascunhos e estado por usuário.
-- Comunicação entre Python e recursos nativos Android.
-- Sincronização e recuperação de estado na troca de conta.
+### Aplicativo do visitante
 
-## Escopo desta apresentação
+Na raiz dos fontes autorizados, use Python **3.12**. O manifesto declara `>=3.12,<3.13`.
 
-Ficha elaborada a partir da estrutura, dependências e documentação dos projetos. Os fontes permanecem privados. Há integração Apple no backend, mas sua ativação depende de configuração externa; ela não é apresentada aqui como recurso operacional.
+```powershell
+.\ABRIR_APP.cmd
+```
 
-Esta ficha não representa uma nova execução dos testes nem validação em aparelho físico.
+O launcher prepara o ambiente. Para gerar o APK:
 
----
+```powershell
+.\GERAR_APK.cmd
+```
 
-**English:** Tourism software ecosystem with visitor and administration applications, authentication services, synchronization and Android native integration.
+A configuração Android usa ARM64, Android mínimo API 24 e template nativo próprio. A compilação depende de Flutter, Java e Android SDK/NDK. Configure e preserve a chave de assinatura de distribuição.
+
+### Aplicativo administrativo
+
+O componente administrativo também usa Python 3.12 e seus próprios `ABRIR_APP.cmd` e `GERAR_APK.cmd`. Execute os comandos na pasta desse componente. O login e as permissões dependem do serviço configurado; não há acesso administrativo público de demonstração.
+
+### Backend
+
+Na raiz do backend:
+
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+# Configure banco de testes, segredo de sessão e integrações antes de iniciar.
+.\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+```
+
+| Configuração | Finalidade |
+| :--- | :--- |
+| `DATABASE_URL` | Localização da base de dados do ambiente |
+| `SESSION_SECRET` | Assinatura dos tokens/sessões |
+| `SESSION_TTL_SECONDS`, `REFRESH_TTL_SECONDS` | Duração das sessões e renovação |
+| `APPLE_CLIENT_ID`, `APPLE_REDIRECT_URI` e configuração de chave | Integração Apple, quando habilitada |
+| `AI_PROVIDER`, `AI_MODEL`, `AI_API_KEY` | Serviço de IA, quando configurado |
+| `ROUTES_PROVIDER`, `ROUTES_BASE_URL` | Serviço de roteiros |
+
+No cliente, `BACKEND_URL` identifica a API configurada. Valores reais e chaves devem permanecer fora do portfólio e do Git.
+
+## Contratos de integração
+
+O backend declara operações para login Google, renovação e encerramento de sessão, consulta do usuário e sincronização. O cliente envia sua autorização nas operações protegidas. A existência da integração Apple no código não comprova sua ativação: ela exige conta e configuração externas.
+
+## Testes disponíveis
+
+No aplicativo do visitante, com as dependências de desenvolvimento instaladas:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
+.\.venv\Scripts\python.exe tests/run.py
+.\.venv\Scripts\python.exe VALIDAR_V130.py
+.\.venv\Scripts\ruff.exe check .
+```
+
+No componente administrativo:
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+```
+
+A documentação existente descreve testes com armazenamento temporário e serviços simulados. Câmera, GPS, notificações, login nativo e assinatura exigem validação em aparelho físico.
+
+## Limites operacionais
+
+A configuração documentada do backend no Render usa SQLite em armazenamento temporário. Reinícios e novos deployments podem perder contas e progresso; uma implantação que exija persistência deve resolver esse requisito. Builds com assinatura de teste não substituem instalações assinadas com outra chave.
+
+## Verificação e acesso
+
+Documentação conferida com os fontes e manifestos em 09/11/2026. Esta revisão foi documental: não executou serviços, migrações, testes funcionais ou cargas de produção. Os fontes são privados; valores de configuração, credenciais e dados operacionais foram omitidos.

@@ -23,10 +23,12 @@ Três projetos com fluxos específicos de gestão:
 
 ### Projetos complementares
 
-- **Gestão de Gabinete:** aplicação Python/Flet para Windows e Android, com agenda, lembretes e integração com API em Google Apps Script.
-- **SaaS de atendimento por WhatsApp:** backend com autenticação, consultas de conversas e operações de atendimento, utilizando FastAPI e SQLAlchemy.
+- **[Gestão de Gabinete](projetos/gestao-de-gabinete.md):** aplicação Python/Flet para Windows e Android, com agenda, lembretes e integração com API em Google Apps Script.
+- **[SaaS de atendimento por WhatsApp](projetos/saas-atendimento.md):** backend com autenticação, consultas de conversas e operações de atendimento, utilizando FastAPI e SQLAlchemy.
 
 > As fichas acima são públicas e podem ser lidas sem acesso aos repositórios de implementação. Código, credenciais e dados operacionais dos projetos privados permanecem restritos.
+
+[Documentação técnica completa dos sete sistemas](projetos/README.md)
 
 ## Perfil profissional
 

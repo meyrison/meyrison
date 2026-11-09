@@ -1,53 +1,99 @@
-# Secretaria de Agricultura · Gerenciamento Rural Cloud
+# Secretaria de Agricultura — Gerenciamento Rural Cloud
 
-**Gestão rural · Windows · Android · Backend**
+**Documentação técnica | Aplicações Windows e Android e backend**
 
-[Voltar ao portfólio](../README.md)
+[Perfil profissional](https://github.com/meyrison) | [Índice da documentação](README.md)
 
-## O projeto
+## Objetivo
 
-Sistema de gestão rural apresentado no portfólio como projeto da Secretaria de Agricultura. Reúne uma API e distribuições do aplicativo para Windows e Android.
+Apoiar a gestão rural com registro e acompanhamento de pedidos, consultas por módulo, cadastros e relatórios. O projeto é apresentado como sistema da Secretaria de Agricultura, com uma API privada e distribuições públicas para Windows e Android.
 
-## Escopo funcional
+## Funcionalidades
 
-- Registro, consulta e edição de pedidos.
+- Registro, consulta, edição e exclusão de pedidos.
 - Atualização de status e listagem por módulo.
 - Gestão de usuários e autenticação.
 - Importação de cadastros.
 - Relatórios por período.
+- Distribuição e atualização dos aplicativos.
+
+## Arquitetura
 
 ```mermaid
 flowchart LR
-    U["Aplicativo Windows ou Android"] --> A["API de gestão"]
-    A --> P["Pedidos e status"]
-    A --> D["PostgreSQL"]
-    P --> R["Consultas e relatórios"]
+    W["Aplicativo Windows"] --> A["API FastAPI"]
+    M["Aplicativo Android"] --> A
+    A --> R["Pedidos, usuários e status"]
+    R --> D["PostgreSQL"]
+    R --> F["Relatórios e documentos"]
 ```
 
-## Tecnologias
+A API declara `app` em `api.py`. As distribuições dos clientes ficam em repositórios próprios. O arquivo de dependências do backend inclui também bibliotecas de interface; ele não substitui um projeto completo de build dos clientes.
 
-**Python, Flet, FastAPI, PostgreSQL, Pydantic, JWT e ferramentas para documentos.**
+## Tecnologias e estrutura
 
-## Distribuições públicas
+| Área | Recursos |
+| :--- | :--- |
+| Interfaces | Python e Flet; distribuições Windows e Android |
+| Backend | FastAPI, Uvicorn, Pydantic e Gunicorn nas dependências |
+| Banco | PostgreSQL e psycopg2 |
+| Autenticação | JWT e bibliotecas de senha |
+| Documentos | ReportLab, python-docx e pypdf |
+| Fontes da API | `api.py` e `requirements.txt` |
 
-| Plataforma | Repositório | Versões |
-| :--- | :--- | :--- |
-| Windows | [Gerenciamento Rural Cloud](https://github.com/meyrison/Gerenciamento-Rural-Cloud) | [EXE e notas](https://github.com/meyrison/Gerenciamento-Rural-Cloud/releases/latest) |
-| Android | [Gerenciamento Rural Cloud · Android](https://github.com/meyrison/Gerenciamento-Rural-Cloud-v4.2.0) | [APK e notas](https://github.com/meyrison/Gerenciamento-Rural-Cloud-v4.2.0/releases/latest) |
+Os contratos incluem pedido, usuário, atualização de status e importação de cadastros. As regras concretas de cada módulo pertencem à implementação autorizada.
 
-As notas publicadas incluem evolução da interface de login no Windows e manutenção do fluxo de atualização no Android.
+## Configuração
 
-## Aspectos técnicos
+| Parâmetro | Finalidade |
+| :--- | :--- |
+| `URL_NUVEM` | DSN PostgreSQL do ambiente; não é a URL HTTP da aplicação |
+| `SECRET_KEY` | Segredo para autenticação |
+| Configuração administrativa | Provisionamento de contas e permissões |
+| SMTP, quando utilizado | Serviços de envio e backup do ambiente |
 
-- Integração entre aplicações e API.
-- Modelagem de pedidos e transições de status.
-- Consultas por módulo e geração de relatórios.
-- Distribuição e evolução de versões desktop e mobile.
+Revise a configuração interna antes de inicializar para evitar conexões com bancos operacionais ou uso de valores padrão.
 
-## Escopo desta apresentação
+## Instalação e execução do backend
 
-Os instaladores são públicos; a implementação do backend permanece privada. Esta revisão verificou os arquivos de implementação e as releases, sem executar os aplicativos ou medir desempenho.
+### Preparar o ambiente
 
----
+Para a equipe com acesso aos fontes, execute na raiz do backend. O exemplo usa Python 3.12 como ambiente de referência; as dependências estão em `requirements.txt`, sem garantia de compatibilidade decorrente desta revisão.
 
-**English:** Rural management system with request workflows, status updates, reporting and Windows/Android distributions.
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
+
+### Configurar e executar
+
+Defina **URL_NUVEM** com a conexão de um banco de testes e **SECRET_KEY** com um segredo exclusivo desse ambiente. Configure também as integrações utilizadas antes de inicializar. Não use valores padrão nem uma base operacional para demonstrações.
+
+```powershell
+if (-not $env:URL_NUVEM -or -not $env:SECRET_KEY) {
+    throw "Configure o banco de testes e o segredo de autenticação."
+}
+.\.venv\Scripts\python.exe -m uvicorn api:app --host 127.0.0.1 --port 8000
+```
+
+A API fica disponível em `http://127.0.0.1:8000`. A interface OpenAPI padrão do FastAPI pode ser consultada em `/docs`; ela descreve o contrato da versão efetivamente iniciada.
+
+
+## Aplicativos e distribuição
+
+| Plataforma | Canal público |
+| :--- | :--- |
+| Windows | [Executável e notas de versão](https://github.com/meyrison/Gerenciamento-Rural-Cloud/releases/latest) |
+| Android | [APK e notas de versão](https://github.com/meyrison/Gerenciamento-Rural-Cloud-v4.2.0/releases/latest) |
+
+O canal Android possui identificadores históricos divergentes entre tag, título e notas. Eles foram preservados para não invalidar links de distribuição. Esta ficha não infere um número único de versão a partir desses rótulos.
+
+Não foi identificado um roteiro de build completo dos clientes nos repositórios de distribuição. Não é correto prometer geração de APK ou EXE apenas com os arquivos públicos.
+
+## Validação técnica
+
+Não foi localizada suíte automatizada no repositório da API. Homologue em banco de testes: autenticação, pedido com dados válidos e inválidos, edição, mudança de status, consulta por módulo e relatório do mesmo período. Teste atualização do cliente e recuperação de falhas de conexão separadamente.
+
+## Verificação e acesso
+
+Documentação conferida com os fontes e manifestos em 09/11/2026. Esta revisão foi documental: não executou serviços, migrações, testes funcionais ou cargas de produção. Os fontes são privados; valores de configuração, credenciais e dados operacionais foram omitidos.
