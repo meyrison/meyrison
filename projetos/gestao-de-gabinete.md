@@ -8,6 +8,12 @@
 
 Organizar demandas, pedidos, agenda e documentos de gabinetes em uma aplicação desktop e mobile. O projeto inclui cliente Python/Flet, API em Google Apps Script, extensões nativas e testes.
 
+## Uso comercial e operação em nuvem
+
+O projeto é atualmente alugado para prefeituras municipais, em modelo de locação de software, com operação em nuvem.
+
+Os clientes Windows e Android integram-se à API em Google Apps Script e aos serviços de dados em nuvem. Recursos nativos, notificações e armazenamento local complementam essa operação.
+
 ## Funcionalidades
 
 - Pedidos, demandas, agenda e lembretes.
@@ -87,4 +93,4 @@ Sincronização, restauração de anexos, controle de conflitos, assinatura e bi
 
 ## Verificação e acesso
 
-Documentação conferida com os fontes e manifestos em 09/11/2026. Esta revisão foi documental: não executou serviços, migrações, testes funcionais ou cargas de produção. Os fontes são privados; valores de configuração, credenciais e dados operacionais foram omitidos.
+Documentação técnica conferida com os fontes e manifestos em 09/11/2026. O modelo de locação para prefeituras municipais e o uso atual em nuvem foram informados pelo autor. A revisão documental não incluiu auditoria dos ambientes dos clientes nem execução de serviços, migrações ou testes de produção. Fontes, credenciais e dados operacionais permanecem privados.

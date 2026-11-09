@@ -8,6 +8,12 @@
 
 Disponibilizar um backend para organizar sessões legislativas, documentos e votações, com registro de votos e consulta de estado por painéis e dispositivos. O escopo consultado é a implementação da API; não inclui os fontes de uma interface de plenário.
 
+## Uso comercial e operação em nuvem
+
+O projeto é atualmente alugado para prefeituras municipais, em modelo de locação de software, com operação em nuvem.
+
+A operação em nuvem atende os clientes, painéis e dispositivos que consomem a API de sessões e votação. Endereços, credenciais e topologia dos ambientes dos clientes não são publicados.
+
 ## Funcionalidades
 
 - Cadastro, consulta e atualização de sessões e documentos.
@@ -61,7 +67,7 @@ Configurações administrativas e de backup são internas e devem ser fornecidas
 
 ### Preparar o ambiente
 
-Para a equipe com acesso aos fontes, execute na raiz do backend. O exemplo usa Python 3.12 como ambiente de referência; as dependências estão em `requirements.txt`, sem garantia de compatibilidade decorrente desta revisão.
+Para a equipe com acesso aos fontes, execute na raiz do backend. O exemplo usa Python 3.12 como ambiente de referência; as dependências estão em `requirements.txt`. Confirme as versões homologadas antes de reproduzir uma implantação.
 
 ```powershell
 py -3.12 -m venv .venv
@@ -90,4 +96,4 @@ Desempenho em plenário, concorrência e recuperação de dispositivos exigem te
 
 ## Verificação e acesso
 
-Documentação conferida com os fontes e manifestos em 09/11/2026. Esta revisão foi documental: não executou serviços, migrações, testes funcionais ou cargas de produção. Os fontes são privados; valores de configuração, credenciais e dados operacionais foram omitidos.
+Documentação técnica conferida com os fontes e manifestos em 09/11/2026. O modelo de locação para prefeituras municipais e o uso atual em nuvem foram informados pelo autor. A revisão documental não incluiu auditoria dos ambientes dos clientes nem execução de serviços, migrações ou testes de produção. Fontes, credenciais e dados operacionais permanecem privados.

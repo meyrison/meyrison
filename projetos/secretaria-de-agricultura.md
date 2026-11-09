@@ -8,6 +8,12 @@
 
 Apoiar a gestão rural com registro e acompanhamento de pedidos, consultas por módulo, cadastros e relatórios. O projeto é apresentado como sistema da Secretaria de Agricultura, com uma API privada e distribuições públicas para Windows e Android.
 
+## Uso comercial e operação em nuvem
+
+O projeto é atualmente alugado para prefeituras municipais, em modelo de locação de software, com operação em nuvem.
+
+Os aplicativos Windows e Android se conectam ao backend em nuvem. Os instaladores são os clientes do sistema e não representam toda a infraestrutura necessária à operação.
+
 ## Funcionalidades
 
 - Registro, consulta, edição e exclusão de pedidos.
@@ -58,7 +64,7 @@ Revise a configuração interna antes de inicializar para evitar conexões com b
 
 ### Preparar o ambiente
 
-Para a equipe com acesso aos fontes, execute na raiz do backend. O exemplo usa Python 3.12 como ambiente de referência; as dependências estão em `requirements.txt`, sem garantia de compatibilidade decorrente desta revisão.
+Para a equipe com acesso aos fontes, execute na raiz do backend. O exemplo usa Python 3.12 como ambiente de referência; as dependências estão em `requirements.txt`. Confirme as versões homologadas antes de reproduzir uma implantação.
 
 ```powershell
 py -3.12 -m venv .venv
@@ -96,4 +102,4 @@ Não foi localizada suíte automatizada no repositório da API. Homologue em ban
 
 ## Verificação e acesso
 
-Documentação conferida com os fontes e manifestos em 09/11/2026. Esta revisão foi documental: não executou serviços, migrações, testes funcionais ou cargas de produção. Os fontes são privados; valores de configuração, credenciais e dados operacionais foram omitidos.
+Documentação técnica conferida com os fontes e manifestos em 09/11/2026. O modelo de locação para prefeituras municipais e o uso atual em nuvem foram informados pelo autor. A revisão documental não incluiu auditoria dos ambientes dos clientes nem execução de serviços, migrações ou testes de produção. Fontes, credenciais e dados operacionais permanecem privados.

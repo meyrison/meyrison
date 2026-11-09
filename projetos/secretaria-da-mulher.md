@@ -8,6 +8,12 @@
 
 Organizar fluxos de atendimento por meio de triagens, encaminhamentos, acompanhamento e relatórios. A documentação descreve o backend identificado nos fontes, sem reproduzir fichas reais ou dados de pessoas atendidas.
 
+## Uso comercial e operação em nuvem
+
+O projeto é atualmente alugado para prefeituras municipais, em modelo de locação de software, com operação em nuvem.
+
+Os serviços de gestão e persistência integram a operação em nuvem. As informações de atendimento permanecem nos ambientes autorizados; este documento apresenta somente o escopo técnico.
+
 ## Funcionalidades
 
 - Registro e consulta de triagens.
@@ -57,7 +63,7 @@ Revise a configuração interna antes de iniciar: não use valores padrão para 
 
 ### Preparar o ambiente
 
-Para a equipe com acesso aos fontes, execute na raiz do backend. O exemplo usa Python 3.12 como ambiente de referência; as dependências estão em `requirements.txt`, sem garantia de compatibilidade decorrente desta revisão.
+Para a equipe com acesso aos fontes, execute na raiz do backend. O exemplo usa Python 3.12 como ambiente de referência; as dependências estão em `requirements.txt`. Confirme as versões homologadas antes de reproduzir uma implantação.
 
 ```powershell
 py -3.12 -m venv .venv
@@ -93,4 +99,4 @@ O sistema trata informações pessoais e de atendimento. Demonstrações, logs, 
 
 ## Verificação e acesso
 
-Documentação conferida com os fontes e manifestos em 09/11/2026. Esta revisão foi documental: não executou serviços, migrações, testes funcionais ou cargas de produção. Os fontes são privados; valores de configuração, credenciais e dados operacionais foram omitidos.
+Documentação técnica conferida com os fontes e manifestos em 09/11/2026. O modelo de locação para prefeituras municipais e o uso atual em nuvem foram informados pelo autor. A revisão documental não incluiu auditoria dos ambientes dos clientes nem execução de serviços, migrações ou testes de produção. Fontes, credenciais e dados operacionais permanecem privados.

@@ -14,6 +14,12 @@ As documentações apresentam objetivo, funcionalidades, arquitetura, tecnologia
 | Gestão de Gabinete | [Aplicações e API Google Apps Script](gestao-de-gabinete.md) |
 | SaaS de atendimento | [Backend e automação](saas-atendimento.md) |
 
+## Contexto comercial
+
+Os sete sistemas apresentados são atualmente alugados para prefeituras municipais e operam com serviços em nuvem. Esse contexto de utilização foi informado pelo autor. Os documentos descrevem os componentes identificados nos fontes; não publicam contratos, clientes, endereços internos ou detalhes da infraestrutura contratada.
+
+Aplicações Windows e Android funcionam como clientes dos serviços em nuvem, conforme a arquitetura de cada projeto.
+
 ## Como ler
 
 - **Objetivo e funcionalidades:** o contexto e o escopo implementado identificado nos fontes.

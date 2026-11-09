@@ -8,6 +8,12 @@
 
 Disponibilizar um backend para atendimento e rotinas administrativas, com empresas, clientes, interações, tarefas, faturas, aprovações e processamento de documentos. O projeto também declara contratos de webhook para WhatsApp e e-mail e operações relacionadas a agentes de atendimento.
 
+## Uso comercial e operação em nuvem
+
+O projeto é atualmente alugado para prefeituras municipais, em modelo de locação de software, com operação em nuvem.
+
+O backend e os serviços configurados compõem a operação em nuvem. A ativação de canais externos, provedores de IA e filas depende da configuração de cada ambiente.
+
 ## Funcionalidades
 
 - Autenticação, usuário atual, dashboard e relatórios.
@@ -18,7 +24,7 @@ Disponibilizar um backend para atendimento e rotinas administrativas, com empres
 - Operações de agentes de atendimento e financeiro.
 - Contratos de integração para WhatsApp e e-mail.
 
-A presença de endpoints e dependências não comprova a ativação de canais externos, provedores de IA ou processamento em fila em uma implantação.
+Os contratos de integração estão presentes no backend; canais externos, provedores de IA e processamento em fila requerem configuração própria em cada implantação.
 
 ## Arquitetura
 
@@ -45,7 +51,7 @@ A entrada ASGI é `api:app`. O módulo concentra modelos, regras de domínio e r
 | Dependências adicionais | Celery, Redis e bibliotecas LangChain |
 | Fontes | `api.py` e `requirements.txt` |
 
-As dependências adicionais não são apresentadas como uma arquitetura de workers comprovadamente implantada. A utilização de OCR requer também os componentes externos compatíveis do Tesseract.
+Celery e Redis estão listados nas dependências; a topologia de workers não é detalhada nesta documentação. A utilização de OCR requer também os componentes externos compatíveis do Tesseract.
 
 ## Configuração
 
@@ -65,7 +71,7 @@ Use dados fictícios, diretórios descartáveis e serviços próprios de testes.
 
 ### Preparar o ambiente
 
-Para a equipe com acesso aos fontes, execute na raiz do backend. O exemplo usa Python 3.12 como ambiente de referência; as dependências estão em `requirements.txt`, sem garantia de compatibilidade decorrente desta revisão.
+Para a equipe com acesso aos fontes, execute na raiz do backend. O exemplo usa Python 3.12 como ambiente de referência; as dependências estão em `requirements.txt`. Confirme as versões homologadas antes de reproduzir uma implantação.
 
 ```powershell
 py -3.12 -m venv .venv
@@ -96,4 +102,4 @@ Endpoints de simulação não substituem a validação do canal WhatsApp. Filas,
 
 ## Verificação e acesso
 
-Documentação conferida com os fontes e manifestos em 09/11/2026. Esta revisão foi documental: não executou serviços, migrações, testes funcionais ou cargas de produção. Os fontes são privados; valores de configuração, credenciais e dados operacionais foram omitidos.
+Documentação técnica conferida com os fontes e manifestos em 09/11/2026. O modelo de locação para prefeituras municipais e o uso atual em nuvem foram informados pelo autor. A revisão documental não incluiu auditoria dos ambientes dos clientes nem execução de serviços, migrações ou testes de produção. Fontes, credenciais e dados operacionais permanecem privados.

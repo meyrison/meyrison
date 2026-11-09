@@ -8,6 +8,12 @@
 
 Reunir descoberta turística, conteúdo editorial e jornada do visitante em um ecossistema com três componentes: aplicativo do visitante, aplicativo administrativo e backend. O projeto contempla interfaces Python/Flet, recursos Android nativos e serviços de autenticação e sincronização.
 
+## Uso comercial e operação em nuvem
+
+O projeto é atualmente alugado para prefeituras municipais, em modelo de locação de software, com operação em nuvem.
+
+Os aplicativos do visitante e da administração acessam serviços em nuvem. Recursos nativos e parte do estado local continuam no dispositivo; operação em nuvem não significa que toda a interface seja executada no servidor.
+
 ## Funcionalidades
 
 | Componente | Responsabilidades |
@@ -110,8 +116,8 @@ A documentação existente descreve testes com armazenamento temporário e servi
 
 ## Limites operacionais
 
-A configuração documentada do backend no Render usa SQLite em armazenamento temporário. Reinícios e novos deployments podem perder contas e progresso; uma implantação que exija persistência deve resolver esse requisito. Builds com assinatura de teste não substituem instalações assinadas com outra chave.
+O manifesto de referência do backend inclui SQLite e uma configuração de armazenamento temporário no Render. Essa configuração versionada não descreve, por si só, a infraestrutura atual dos clientes. Ao reproduzi-la em um novo ambiente, confirme persistência e backup: armazenamento temporário pode perder dados após reinícios e deployments. Builds com assinatura de teste não substituem instalações assinadas com outra chave.
 
 ## Verificação e acesso
 
-Documentação conferida com os fontes e manifestos em 09/11/2026. Esta revisão foi documental: não executou serviços, migrações, testes funcionais ou cargas de produção. Os fontes são privados; valores de configuração, credenciais e dados operacionais foram omitidos.
+Documentação técnica conferida com os fontes e manifestos em 09/11/2026. O modelo de locação para prefeituras municipais e o uso atual em nuvem foram informados pelo autor. A revisão documental não incluiu auditoria dos ambientes dos clientes nem execução de serviços, migrações ou testes de produção. Fontes, credenciais e dados operacionais permanecem privados.

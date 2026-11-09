@@ -2,6 +2,8 @@
 
 **Desenvolvimento Python | APIs REST | Aplicações multiplataforma | Gestão pública**
 
+**Projetos atualmente alugados para prefeituras municipais, com operação em nuvem.** O portfólio reúne soluções para turismo, gestão legislativa e rotinas administrativas do setor público.
+
 ## Projetos em destaque
 
 | [Turismo Agrestinense](projetos/turismo-agrestinense.md) | [Sistema de votação legislativa](projetos/votacao-legislativa.md) |
@@ -34,7 +36,7 @@ Três projetos com fluxos específicos de gestão:
 
 Sou **Luan Meyrison**, desenvolvedor de software com foco em **Python, desenvolvimento backend e integração de sistemas**. Meu portfólio reúne aplicações para **Windows e Android**, APIs REST e bancos de dados relacionais, com projetos em turismo, gestão legislativa e serviços públicos.
 
-Atuo na implementação de interfaces, regras de negócio, autenticação JWT, sincronização de dados e geração de documentos e relatórios.
+Atuo na implementação e evolução de interfaces, regras de negócio, autenticação JWT, sincronização de dados e geração de documentos e relatórios. Os projetos são disponibilizados em modelo de locação de software para clientes municipais, com serviços em nuvem e aplicações cliente para Windows e Android, conforme cada sistema.
 
 ## Competências técnicas
 
@@ -58,7 +60,7 @@ Estou aberto a oportunidades em **desenvolvimento Python, backend, frontend e fu
 
 ## English
 
-I develop Python applications with Flet interfaces, FastAPI services and database integrations. My portfolio includes **Turismo Agrestinense**, a **legislative voting system**, and management systems for **Women's Affairs, Agriculture and Environment**.
+I develop Python applications with Flet interfaces, FastAPI services and database integrations. The projects are currently rented to municipal governments and operate with cloud services. My portfolio includes **Turismo Agrestinense**, a **legislative voting system**, and management systems for **Women's Affairs, Agriculture and Environment**.
 
 My work spans Windows and Android applications, API integration, authentication, state synchronization and document generation. Public project briefs describe the scope while private source code and operational data remain restricted.
 

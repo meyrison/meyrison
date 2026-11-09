@@ -8,6 +8,12 @@
 
 Organizar atividades, cadastros, cronogramas e ações formativas da Secretaria de Meio Ambiente. A documentação descreve o backend de gestão e sua relação com o canal público de distribuição.
 
+## Uso comercial e operação em nuvem
+
+O projeto é atualmente alugado para prefeituras municipais, em modelo de locação de software, com operação em nuvem.
+
+O sistema utiliza serviços em nuvem para as rotinas de gestão. A versão do aplicativo distribuído e a versão do backend podem evoluir de forma independente.
+
 ## Funcionalidades
 
 - Cadastro, edição e atualização de status de atividades.
@@ -57,7 +63,7 @@ Antes de inicializar, revise os parâmetros internos, configure um banco descart
 
 ### Preparar o ambiente
 
-Para a equipe com acesso aos fontes, execute na raiz do backend. O exemplo usa Python 3.12 como ambiente de referência; as dependências estão em `requirements.txt`, sem garantia de compatibilidade decorrente desta revisão.
+Para a equipe com acesso aos fontes, execute na raiz do backend. O exemplo usa Python 3.12 como ambiente de referência; as dependências estão em `requirements.txt`. Confirme as versões homologadas antes de reproduzir uma implantação.
 
 ```powershell
 py -3.12 -m venv .venv
@@ -90,4 +96,4 @@ Não foi localizada suíte automatizada no repositório consultado. A homologaç
 
 ## Verificação e acesso
 
-Documentação conferida com os fontes e manifestos em 09/11/2026. Esta revisão foi documental: não executou serviços, migrações, testes funcionais ou cargas de produção. Os fontes são privados; valores de configuração, credenciais e dados operacionais foram omitidos.
+Documentação técnica conferida com os fontes e manifestos em 09/11/2026. O modelo de locação para prefeituras municipais e o uso atual em nuvem foram informados pelo autor. A revisão documental não incluiu auditoria dos ambientes dos clientes nem execução de serviços, migrações ou testes de produção. Fontes, credenciais e dados operacionais permanecem privados.
